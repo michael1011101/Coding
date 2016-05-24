@@ -36,8 +36,8 @@ void gao1(){
         if(col%26==0 && col/26==1) break;
         col /= 26;
     }
+    reverse(ccol, ccol+i);      //取余逆序，才能获得col的编码值
 
-    reverse(ccol, ccol+i);
     printf("%s%d\n", ccol, row);
 }
 
@@ -45,6 +45,7 @@ void gao2(){
     int i;
     int row, col;
     int len = strlen(str);
+    //获取col的值
     col=0;
     for(i=0; i<len; ++i){
         if(str[i]>='A'&&str[i]<='Z')
@@ -53,6 +54,7 @@ void gao2(){
             break;
 
     }
+    //获取row的值
     row=0;
     for( ; i<len; ++i){
         row = row*10+(str[i]-'0');
@@ -62,10 +64,6 @@ void gao2(){
 }
 
 void READ(){
-    #ifdef muller
-        freopen("1.in", "r+", stdin);
-        freopen("1.out", "w+", stdout);
-    #endif
     int n;
     bool flag;
     scanf("%d", &n);
