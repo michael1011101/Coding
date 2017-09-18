@@ -1,0 +1,6 @@
+Select Max(e1.Salary) as SecondHighestSalary
+from Employee as e1
+left join Employee as e2
+on e1.Salary < e2.Salary
+group by e1.Salary
+having count(e2.id) = 1;

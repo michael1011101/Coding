@@ -1,0 +1,3 @@
+update salary set sex="s" where sex="f";
+update salary set sex="f" where sex="m";
+update salary set sex="m" where sex="s";
