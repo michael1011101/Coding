@@ -1,5 +1,0 @@
-select s1.Score, count(r.score) as Rank
-from Scores as s1, (Select distinct s2.Score from Scores as s2) as r
-where s1.Score <= r.Score
-group by s1.id, s1.Score
-order by s1.Score desc;
